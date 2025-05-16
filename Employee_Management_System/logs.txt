@@ -1,2 +1,0 @@
-[2025-02-09  15:28:50]Added employee: Employee{id=2, name='Vishal', Department='TI', salary=400000.0}
-[2025-02-09  15:32:48]Added employee: Employee{id=3, name='Lokeh', Department='Cs', salary=500000.0}
