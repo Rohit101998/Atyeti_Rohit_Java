@@ -1,0 +1,7 @@
+[2025-05-16 16:56:18]Added  employeeEmployee(id=1, name=Rohit, Department=IT, salary=500.0)
+[2025-05-16 16:56:37]Added  employeeEmployee(id=2, name=Vishal, Department=CS, salary=800.0)
+[2025-05-16 16:57:13]Updated employeeEmployee(id=1, name=Shubham, Department=IT, salary=500.0)
+[2025-05-16 16:57:35]Added  employeeEmployee(id=3, name=Rohit, Department=CS, salary=900.0)
+[2025-05-16 16:57:43]Removed employee with id: 3
+[2025-05-16 17:02:01]Added  employeeEmployee(id=1, name=Rohit, Department=CS, salary=500.0)
+[2025-05-16 17:02:15]Added  employeeEmployee(id=2, name=Shubham, Department=IT, salary=800.0)
