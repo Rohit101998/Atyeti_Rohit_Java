@@ -2,6 +2,8 @@ import com.logger.*;
 
 import java.time.LocalDateTime;
 import java.util.Map;
+import java.util.concurrent.ConcurrentMap;
+import java.util.concurrent.atomic.AtomicInteger;
 
 
 public class Main {
@@ -11,14 +13,21 @@ public class Main {
        // String logDir1 = "logs1";
 
         try {
-            File_Reader readFileLogger = new File_Reader();
-            readFileLogger.readData1(logDir);
+//            File_Reader readFileLogger = new File_Reader();
+//            readFileLogger.readData1(logDir);
 
-            Map<String,Integer> logCounts = readFileLogger.getLog_Counts();
+            File_Reader_AtomicInt readerAtomicInt =new File_Reader_AtomicInt();
+            readerAtomicInt.readData1(logDir);
+
+//            Map<String, Integer> logCounts = readFileLogger.getLog_Counts();
+//            LocalDateTime currentTimeStamp = LocalDateTime.now();
+
+            ConcurrentMap<String, AtomicInteger> logCounts1 =readerAtomicInt.getLog_Counts();
             LocalDateTime currentTimeStamp = LocalDateTime.now();
 
-            DatabaseHandler handler = new DatabaseHandler();
-              handler.insertLoges(currentTimeStamp,logCounts);
+           DatabaseHandler handler = new DatabaseHandler();
+              handler.insertLoges(currentTimeStamp,logCounts1);
+
 
             //CopyOneToAnother readLogger = new CopyOneToAnother();
             //readLogger.writeFile(logDir, logDir1);
