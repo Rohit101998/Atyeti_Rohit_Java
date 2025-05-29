@@ -2,6 +2,11 @@
   <library name="mysql-connector-j-9.3.0">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/../../Java/mysql-connector-j-9.3.0.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/junit-jupiter-api-5.12.2.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/junit-jupiter-engine-5.12.2.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/junit-platform-commons-1.12.2.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/junit-platform-engine-1.12.2.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/mockito-core-5.17.0.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
