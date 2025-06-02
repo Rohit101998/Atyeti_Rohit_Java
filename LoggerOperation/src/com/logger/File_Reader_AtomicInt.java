@@ -39,10 +39,9 @@ public class File_Reader_AtomicInt {
         executorService.shutdown();
         executorService.awaitTermination(1, TimeUnit.HOURS);
 
-
     }
 
-    private synchronized void  ProcessFile(File file){
+    public synchronized void  ProcessFile(File file){
         try(BufferedReader br = new BufferedReader(new FileReader(file))){
             String line;
             while((line = br.readLine()) != null){

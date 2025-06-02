@@ -41,6 +41,7 @@ public class DatabaseHandler {
             ps.setInt(4, infoCount);
             int rowsInserted = ps.executeUpdate();
 
+
             if (rowsInserted > 0) {
                 System.out.println("Log entry inserted  successfully:");
                 System.out.println("Timestamp     : " + timestamp);
