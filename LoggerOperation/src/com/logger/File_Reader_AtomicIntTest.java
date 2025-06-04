@@ -15,10 +15,10 @@ import static org.junit.jupiter.api.Assertions.*;
 class File_Reader_AtomicIntTest {
 
     File_Reader_AtomicInt fileReaderAtomicInt;
-    public static ConcurrentMap<String, AtomicInteger> log_Counts = new ConcurrentHashMap<>();
-    public final ExecutorService executorService = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
 
-    String file= "logs";
+    List<String> file = null;
+
+   // String file= "logs";
 
     String File_Path = "C:\\Users\\RohitPatil\\OneDrive - Atyeti Inc\\Desktop\\Atyeti_Rohit_Java\\LoggerOperation\\logtest";
 

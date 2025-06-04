@@ -80,7 +80,5 @@ class DatabaseHandlerTest {
             fail("Exception during database verification: " + e.getMessage());
         }
 
-
-
     }
-    }
+}
