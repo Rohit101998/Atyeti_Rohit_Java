@@ -28,6 +28,5 @@ public class CustomerProductOrder {
         custOrder.forEach((cust,prodMap)->
                 System.out.println(cust+" : "+prodMap)
         );
-
     }
 }
