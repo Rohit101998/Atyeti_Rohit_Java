@@ -18,7 +18,7 @@ public class AnagramGrouper {
 
      Set<Set<String>> groupAnagram = new HashSet<>(anagramGroup.values());
 
-        System.out.println("Group Anagram");
+     System.out.println("Group Anagram");
 
      for(Set<String> group:groupAnagram){
          System.out.println(group);
