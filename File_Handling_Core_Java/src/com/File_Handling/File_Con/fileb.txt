@@ -1,0 +1,1 @@
+This is a sample text file containing basic information.It demonstrates reading and writing operations in Java.Feel free to modify and use it for testing purposes.
