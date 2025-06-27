@@ -1,0 +1,4 @@
+INFO: Server started
+WARNING: Memory low
+SUCCESS: Disk failed
+INFO: Connection established
