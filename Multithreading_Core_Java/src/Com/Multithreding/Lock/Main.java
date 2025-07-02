@@ -1,4 +1,4 @@
-package Com.Multithreding.Look;
+package Com.Multithreding.Lock;
 
 public class Main {
     public static void main(String[] args) {
