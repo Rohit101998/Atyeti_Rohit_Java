@@ -24,6 +24,7 @@ public class SocialController {
     return new ResponseEntity<>(socialService.saveUser(socialUser), HttpStatus.CREATED);
   }
 
+
   @DeleteMapping("/social/users/{userId}")
   public ResponseEntity<String> deleteUser(@PathVariable Long userId){
     socialService.deleteUser(userId);
