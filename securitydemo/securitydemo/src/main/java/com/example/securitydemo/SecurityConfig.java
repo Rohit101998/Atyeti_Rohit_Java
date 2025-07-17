@@ -1,5 +1,7 @@
 package com.example.securitydemo;
 
+import com.example.securitydemo.jwt.AuthEntryPointJwt;
+import com.example.securitydemo.jwt.AuthTokenFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -30,15 +32,28 @@ public class SecurityConfig {
     @Autowired
     DataSource dataSource;
 
+    @Autowired
+    private AuthEntryPointJwt unauthorizedHandler;
+
+    @Bean
+    private AuthTokenFilter authenticationJwtTokenFilter(){
+        return new AuthTokenFilter();
+    }
+
     @Bean
     SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http)throws Exception{
         http.authorizeHttpRequests((requests)->
                 requests.requestMatchers("/h2-console/**").permitAll()
+                        .requestMatchers("/api/signin").permitAll()
                         .anyRequest().authenticated());
         http.sessionManagement(session ->
                 session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
         //http.formLogin(withDefaults());
-        http.httpBasic(withDefaults());
+        //http.httpBasic(withDefaults());
+
+        http.exceptionHandling(exception ->
+                exception.authenticationEntryPoint(unauthorizedHandler));
+
         http.headers(headers->
                 headers.frameOptions(HeadersConfigurer.FrameOptionsConfig::sameOrigin));
         http.csrf(AbstractHttpConfigurer::disable);
