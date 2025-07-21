@@ -1,4 +1,4 @@
-package com.example.securitydemo.jwt;
+package com.example.jwt;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.ServletException;
@@ -14,7 +14,6 @@ import org.springframework.stereotype.Component;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 
 @Component
 public class AuthEntryPointJwt implements AuthenticationEntryPoint {

@@ -1,4 +1,4 @@
-package com.example.securitydemo.jwt;
+package com.example.jwt;
 
 public class LoginRequest {
     private String username;
