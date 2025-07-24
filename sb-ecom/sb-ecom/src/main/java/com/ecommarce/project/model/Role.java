@@ -7,11 +7,12 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @Entity
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Data
 @Table(name = "roles")
 public class Role {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "role_id")
@@ -19,7 +20,7 @@ public class Role {
 
     @ToString.Exclude
     @Enumerated(EnumType.STRING)
-    @Column(length = 20,name = "role_name")
+    @Column(length = 20, name = "role_name")
     private AppRole roleName;
 
     public Role(AppRole roleName) {

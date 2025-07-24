@@ -1,17 +1,16 @@
-package com.ecommarce.project.security.service;
+package com.ecommarce.project.security.services;
 
 import com.ecommarce.project.model.User;
-import com.ecommarce.project.repository.UserRepository;
-import jakarta.transaction.Transactional;
+import com.ecommarce.project.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
-
     @Autowired
     UserRepository userRepository;
 
@@ -19,8 +18,10 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     @Transactional
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userRepository.findByUserName(username)
-                .orElseThrow(()->
-                        new UsernameNotFoundException("User not found with username: "+username));
+                .orElseThrow(() -> new UsernameNotFoundException("User Not Found with username: " + username));
+
         return UserDetailsImpl.build(user);
     }
+
+
 }
