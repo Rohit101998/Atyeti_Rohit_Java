@@ -222,7 +222,7 @@ public class CartServiceImpl implements CartService{
         CartItem cartItem = cartItemRepository.findCartItemByProductIdAndCarId(cartId,productId);
 
         if(cartItem == null){
-            throw new APIException("Product "+ product.getProductName() + " not available in the cart!!")
+            throw new APIException("Product "+ product.getProductName() + " not available in the cart!!");
         }
           //1000 - 100*2 = 800
         double cartPrise = cart.getTotalPrice() -
