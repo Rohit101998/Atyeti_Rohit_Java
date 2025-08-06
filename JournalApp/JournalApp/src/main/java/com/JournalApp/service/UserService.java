@@ -4,10 +4,12 @@ import com.JournalApp.entity.User;
 import com.JournalApp.ropository.UserServiceRepo;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Optional;
 
+@Component
 public class UserService {
 
     @Autowired
@@ -25,6 +27,9 @@ public class UserService {
     }
     public void deleteUser(ObjectId id){
         userServiceRepo.deleteById(id);
+    }
+    public User findByUsername(String userName){
+        return userServiceRepo.findByUserName(userName);
     }
 
 }
